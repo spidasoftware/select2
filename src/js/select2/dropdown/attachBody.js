@@ -98,7 +98,12 @@ define([
 
     $watchers.on(scrollEvent, function (ev) {
       var position = $(this).data('select2-scroll-position');
-      $(this).scrollTop(position.y);
+      // SPIDA MODIFIED CODE BELOW ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      // FIX CAME FROM -> https://github.com/select2/select2/issues/3125#issuecomment-276857804
+      if($(this).find('.select2-container--open').size() > 0) {
+        $(this).scrollTop(position.y);
+      }
+      // SPIDA MODIFIED CODE ABOVE ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     });
 
     $(window).on(scrollEvent + ' ' + resizeEvent + ' ' + orientationEvent,
