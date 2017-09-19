@@ -1,3 +1,5 @@
+NOTE: SPIDA Modifications on 4.0.3-spida branch
+
 Select2
 =======
 [![Build Status][travis-ci-image]][travis-ci-status]
